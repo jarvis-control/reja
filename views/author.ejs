@@ -1,1 +1,486 @@
-<div>Hello World, you are in author's page!</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/main.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <title>Portfolio</title>
+  </head>
+
+  <body>
+    <div class="frame">
+      <div class="main_frame">
+        <div class="left_frame">
+          <div class="left_1">
+            <div class="left_1-1">
+              <img
+                src="images/profile.png"
+                width="156px"
+                height="142px"
+                alt=""
+              />
+            </div>
+            <div class="left_1-2"><%=user.name%></div>
+            <div class="left_1-3"><%=user.profession%></div>
+            <div class="left-icons">
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/icons-facebook.svg" class="icon-1" />
+                </div>
+              </a>
+
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/icons-instagram.svg" class="icon-1" />
+                </div>
+              </a>
+
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/icons-twitter.svg" class="icon-1" />
+                </div>
+              </a>
+
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/icons-linkedin.svg" class="icon-1" />
+                </div>
+              </a>
+
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/icons-youtube.svg" class="icon-1" />
+                </div>
+              </a>
+
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/icons-dribbble.svg" class="icon-1" />
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="marginer"></div>
+          <div class="left_2">
+
+              <div class="left_2-1">
+                <div class="left_2-1-title">
+                  <p>Age:</p>
+                </div>
+                <div class="left_2-1-value">
+                    <%= user.age %>
+                </div>
+              </div>
+
+              <div class="left_2-1">
+                <div class="left_2-1-title">
+                  <p>Residence:</p>
+                </div>
+                <div class="left_2-1-value">
+                    <%= user.residence %>
+                </div>
+              </div>
+
+              <div class="left_2-1">
+                <div class="left_2-1-title">
+                  <p>Freelance:</p>
+                </div>
+                <div class="left_2-1-value green">
+                    <p>Available</p>
+                </div>
+              </div>
+
+              <div class="left_2-1">
+                <div class="left_2-1-title">
+                  <p>Address:</p>
+                </div>
+                <div class="left_2-1-value">
+                    <%= user.address %>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="marginer"></div>
+
+
+
+
+
+          <div class="left_3">
+
+            <div class="left_3-1">
+                <div class="left_3-1-title">
+                  <h3>Languages</h3>
+                </div>
+            </div>
+
+            <div class="left_3-1">
+                <div class="left_3-1-title">
+                  <%= user.languages[0] %>
+                </div>
+                <div class="left_3-1-value">
+                    <p>100%</p>
+                </div>
+            </div>
+
+           <div class="left_3-1-line-1">
+            <div class="left_3-1-inline-1"></div>
+           </div>
+
+            <div class="left_3-1">
+                <div class="left_3-1-title">
+                  <%= user.languages[1] %>
+                </div>
+                <div class="left_3-1-value">
+                    <p>80%</p>
+                </div>
+            </div>
+
+            <div class="left_3-1-line-2">
+              <div class="left_3-1-inline-2"></div>
+            </div>
+
+            <div class="left_3-1">
+                <div class="left_3-1-title">
+                  <%= user.languages[1] %>
+                </div>
+                <div class="left_3-1-value">
+                    <p>60%</p>
+                </div>
+            </div>
+
+            <div class="left_3-1-line-3">
+              <div class="left_3-1-inline-3"></div>
+            </div>
+
+          </div>
+
+          <div class="marginer"></div>
+
+          <div class="left_4">
+
+            <div class="left_4-1">
+                <div class="left_4-1-title">
+                  <h3>Skills</h3>
+                </div>
+            </div>
+
+            <div class="left_4-1">
+                <div class="left_4-1-title">
+                  <%= user.skills[0] %>
+                </div>
+                <div class="left_4-1-value">
+                    <p>90%</p>
+                </div>
+            </div>
+
+           <div class="left_4-1-line-1">
+            <div class="left_4-1-inline-1"></div>
+           </div>
+
+            <div class="left_4-1">
+                <div class="left_4-1-title">
+                  <%= user.skills[1] %>
+                </div>
+                <div class="left_4-1-value">
+                    <p>85%</p>
+                </div>
+            </div>
+
+            <div class="left_4-1-line-2">
+              <div class="left_4-1-inline-2"></div>
+            </div>
+
+            <div class="left_4-1">
+                <div class="left_4-1-title">
+                  <%= user.skills[2] %>
+                </div>
+                <div class="left_4-1-value">
+                    <p>80%</p>
+                </div>
+            </div>
+
+            <div class="left_4-1-line-3">
+              <div class="left_4-1-inline-3"></div>
+            </div>
+            
+            <div class="left_4-1">
+                <div class="left_4-1-title">
+                  <%= user.skills[3] %>
+                </div>
+                <div class="left_4-1-value">
+                    <p>75%</p>
+                </div>
+            </div>
+
+            <div class="left_4-1-line-4">
+              <div class="left_4-1-inline-4"></div>
+            </div>
+
+            <div class="left_4-1">
+                <div class="left_4-1-title">
+                  <%= user.skills[4] %>
+                </div>
+                <div class="left_4-1-value">
+                    <p>85%</p>
+                </div>
+            </div>
+
+            <div class="left_4-1-line-5">
+              <div class="left_4-1-inline-5"></div>
+            </div>
+
+          </div>
+
+          <div class="marginer"></div>
+
+          <div class="left_5">
+
+             <div class="left_5-1">
+                <div class="left_5-1-icon">
+                  <h3>Extra Skills</h3>
+                </div>
+            </div>
+
+            <div class="left_5-1">
+                <div class="left_5-1-icon">
+                  <img src="icon/Icons.svg">
+                </div>
+                <div class="left_5-1-extra">
+                    <%= user.extra_skills[0] %>, <%= user.extra_skills[1] %>
+                </div>
+            </div>
+
+             <div class="left_5-1">
+                <div class="left_5-1-icon">
+                  <img src="icon/Icons.svg">
+                </div>
+                <div class="left_5-1-extra">
+                    <%= user.extra_skills[2] %>,
+                    <%= user.extra_skills[3] %>,
+                    <%= user.extra_skills[4] %>
+                </div>
+            </div>
+
+             <div class="left_5-1">
+                <div class="left_5-1-icon">
+                  <img src="icon/Icons.svg">
+                </div>
+                <div class="left_5-1-extra">
+                    <%= user.extra_skills[5] %>
+                </div>
+            </div>
+
+             <div class="left_5-1">
+                <div class="left_5-1-icon">
+                  <img src="icon/Icons.svg">
+                </div>
+                <div class="left_5-1-extra">
+                    <%= user.extra_skills[6] %>
+                </div>
+            </div>
+          </div>
+
+          <div class="marginer"></div>
+
+          <div class="left_6">
+            <div class="left_6-1">
+              <div class="download-cv">
+                <h4>DOWNLOAD CV</h4>
+              </div>
+              <div class="frame-icon">
+                <img src="icon/Frame.png"/>
+              </div>
+           </div>
+          </div>
+        </div>
+
+        <div class="midd_frame">
+
+          <div class="midd_frame_top">
+
+            <div class="midd_frame_top_column1">
+              <div class="profession-doctor">
+                <h1>Doctor neurologists <br> in OHSU Hospital</h1>
+              </div>
+
+              <div class="lorem-ipsum">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing <br> 
+                  elit. Et, volutpat feugiat placerat lobortis. Natoque <br> 
+                  rutrum semper sed suspendisse nunc lectus.</p>
+              </div>
+
+              <div class="hire-me">
+                <h3>HIRE ME</h3>
+                <img src="icon/arrow-icon.svg"/>
+              </div>
+            </div>
+
+            <div class="midd_frame_top_column2">
+              <div class="big-image">
+                <img src="icon/big-image.svg"/>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="midd_frame_bottom">
+
+            <div class="services">
+              <div class="my-services">
+                <h1>My services</h1>
+              </div>
+              <div class="my-services-lorem">
+                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor <br> 
+                   do amet sint. Velit officia consequat duis enim velit mollit. <br> 
+                   lorem ipsum
+                </p>
+              </div>
+            </div>
+
+            <div class="row-line-1">
+
+              <div class="card-1">
+                <div class="computer-image">
+                  <img src="icon/computer-image.svg"/>
+                </div>
+
+                <div class="web-development">
+                  <h3>Web Development</h3>
+                </div>
+
+                <div class="e-commerce">
+                  <p>Blog, E-Commerce</p>
+                </div>
+              </div>
+
+              <div class="card-2">
+                <div class="computer-design-image">
+                  <img src="icon/computer-design-image.svg"/>
+                </div>
+
+                <div class="ui-ux-design">
+                  <h3>UI/UX Design</h3>
+                </div>
+
+                <div class="mobile-app">
+                  <p>Mobile App, Website Design</p>
+                </div>
+              </div>
+
+              <div class="card-3">
+                <div class="microphone-image">
+                  <img src="icon/microphone-image.svg"/>
+                </div>
+
+                <div class="sound-design">
+                  <h3>Sound Design</h3>
+                </div>
+
+                <div class="voice-over">
+                  <p>Voice Over, Beat Making</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row-line-2">
+
+              <div class="card-4">
+                <div class="play-computer-image">
+                  <img src="icon/play-computer-image.svg"/>
+                </div>
+
+                <div class="game design">
+                  <h3>Game Design</h3>
+                </div>
+
+                <div class="e-commerce">
+                  <p>Character Design, Props & Objects</p>
+                </div>
+              </div>
+
+              <div class="card-5">
+                <div class="photograpy-image">
+                  <img src="icon/photography-image.svg"/>
+                </div>
+
+                <div class="photography">
+                  <h3>Photography</h3>
+                </div>
+
+                <div class="mobile-app">
+                  <p>Portrait, Product Photography</p>
+                </div>
+              </div>
+
+              <div class="card-6">
+                <div class="just-advertising">
+                  <h3>Adverstising</h3>
+                </div>
+
+                <div class="lorem-epsum">
+                  <p>Lorem ipsum dolor sit amet,<br>
+                      consectetur adipiscing elit. Vitae<br>
+                      nulla diam in ac dictum a urna<br>
+                      viverra morbi.
+                  </p>
+                </div>
+
+                <div class="order-now">
+                  <p>order now ></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          </div>
+          <div class="right_frame">
+
+          <div class="right-frame-top-icon">
+            <img src="icon/Contrast.svg"/>
+          </div>
+
+          <div class="other-right-side-icons">
+            
+            <div>
+              <img src="icon/Home.svg"/>
+            </div>
+
+            <div>
+              <img src="icon/Service.svg"/>
+            </div>
+
+            <div>
+              <img src="icon/Cv.svg"/>
+            </div>
+
+            <div>
+              <img src="icon/Portfolio.svg"/>
+            </div>
+
+            <div>
+              <img src="icon/Blog.svg"/>
+            </div>
+
+            <div>
+              <img src="icon/Contact.svg"/>
+            </div>
+
+          </div>
+        </div>
+        </div>
+
+      
+      </div>
+    </div>
+  </body>
+</html>
