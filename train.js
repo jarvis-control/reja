@@ -23,7 +23,7 @@ console.log(countLetter("e", "engineer"));
 //   "Endi dam oling, endi foydasi yo'q", // 60+
 // ];
 
-// /* Deine via Callback functione: */
+// /* Define via Callback function: */
 // function maslahatBering(a, callback) {
 //     if(typeof a !== 'number') callback("Please, insert a number", null);
 //     else if (a <= 20) callback(null, list[0]);
