@@ -17,7 +17,7 @@ function itemTemplate(item) {
               class="delete-me btn btn-danger btn-sm mr-1"
             >
               O'chirish
-            </button>ç
+            </button>
           </div>
         </li>`;
 }
@@ -39,4 +39,27 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
     .catch((err) => {
       console.log("Iltimos qaytatdan harakat qiling!");
     });
+});
+
+document.addEventListener("click", function (e) {
+  // delete oper
+  console.log(e.target);
+  if (e.target.classList.contains("delete-me")) {
+    if (confirm("Aniq o'chirmoqchimisiz?")) {
+      axios
+        .post("/delete-item", { id: e.target.getAttribute("data-id") })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.remove();
+        })
+        .catch((err) => {
+          console.log("Iltimos qaytatdan harakat qiling!");
+        });
+    }
+  }
+
+  // edit oper
+  if (e.target.classList.contains("edit-me")) {
+    alert("Siz edit tugmasini bosdingi");
+  }
 });

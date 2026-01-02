@@ -1,15 +1,64 @@
-// TASK B:
-function countDigits(digits) {
-  let count = 0;
-  for (let char of digits) {
-    if(char >= "0" && char <= "9") {
-        count++;
+// TASK C:
+
+const moment = require("moment");
+const data = moment().format("hh:mm");
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
+  }
+  qoldiq() {
+    console.log(
+      `Hozir sizda ${data}da ${this.non}ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola mavjud `
+    );
+  }
+
+  sotish(mahsulot, minus) {
+    if (mahsulot === "non") {
+      this.non -= minus;
+    } else if (mahsulot === "lagmon") {
+      this.lagmon -= minus;
+    } else if (mahsulot === "cola") {
+      this.cola -= minus;
+    } else {
+      console.log("sizda mahsulot yuq");
     }
   }
-  return count;
+
+  qabul(mahsulot, plus) {
+    if (mahsulot === "non") {
+      this.non += plus;
+    } else if (mahsulot === "lagmon") {
+      this.lagmon += plus;
+    } else if (mahsulot === "cola") {
+      this.cola += plus;
+    } else {
+      console.log("mahsulot qushmadingiz");
+    }
+  }
 }
 
-console.log(countDigits("1d2a54y799t0sfgb9"));
+const shop = new Shop(4, 5, 2);
+
+shop.qoldiq();
+shop.sotish("non", 2);
+shop.qabul("cola", 5);
+shop.qoldiq();
+
+// TASK B:
+// function countDigits(digits) {
+//   let count = 0;
+//   for (let char of digits) {
+//     if(char >= "0" && char <= "9") {
+//         count++;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(countDigits("1d2a54y799t0sfgb9"));
 
 // TASK A:
 // function countLetter(letter, word) {
@@ -23,8 +72,6 @@ console.log(countDigits("1d2a54y799t0sfgb9"));
 // }
 
 // console.log(countLetter("e", "engineer"));
-
-
 
 // console.log("Jack Ma maslahatlari");
 // const list = [
