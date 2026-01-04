@@ -18,7 +18,7 @@ const { ObjectId } = require("mongodb");
 
 // 1 Entry code
 app.use(express.static("public"));
-app.use(express.json());
+app.use(express.json()); // JSON data => JavaScript object
 app.use(express.urlencoded({ extended: true }));
 
 // 2 Session code
@@ -29,11 +29,16 @@ app.set("view engine", "ejs");
 
 // 4 Routing code
 app.post("/create-item", (req, res) => {
-  console.log("user entered /create-item");
-  console.log(req.body);
+  console.log("STEP2: BACKENDga kirish..");
+  console.log("req.body:", req.body);
+
+  console.log("STEP3: BACKEND => DATABASE (CREATE)");
   const new_reja = req.body.reja;
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    console.log("STEP4: DATABASE => BACKEND (returned with the created DATA)");
     console.log(data.ops);
+
+    console.log("STEP5: BACKEND - JSON => FRONTEND ");
     res.json(data.ops[0]);
   });
 });
@@ -49,20 +54,42 @@ app.post("/delete-item", (req, res) => {
   );
 });
 
-app.get("/author", (req, res) => {
-  res.render("author", { user: user });
+app.post("/edit-item", (req, res) => {
+  const data = req.body;
+  console.log(data);
+  db.collection("plans").findOneAndUpdate(
+    { _id: new ObjectId(data.id) },
+    { $set: { reja: data.new_input } },
+    function (err, data) {
+      res.json({ state: "success" });
+    }
+  );
+});
+
+app.post("/delete-all", (req, res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany(function () {
+      res.json({ state: "hamma rejalar o'chirildi" });
+    });
+  }
 });
 
 app.get("/", function (req, res) {
-  console.log("user entered /");
-  db.collection("plans")
+  console.log("STEP2: BACKENDga kirish..");
+
+  console.log("STEP3: BACKEND => DATABASE (READ)");
+  db.collection("plans") // "plans" - CLUSTER => DATABASE => COLLECTION
     .find()
     .toArray((err, data) => {
       if (err) {
         console.log(err);
         res.end("Something went wrong");
       } else {
-        res.render("reja", { items: data });
+        console.log("STEP4: DATABASE => BACKEND (returned with DATA)");
+        console.log(data);
+
+        console.log("STEP5: BACKEND - EJS>DATA>HTML => FRONTEND");
+        res.render("reja", { items: data }); // "reja" - ejs-related
       }
     });
 });

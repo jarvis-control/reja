@@ -1,3 +1,23 @@
+// TAK D:
+
+function checkContent(str1, str2) {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+  const arr1 = str1.split("");
+  const arr2 = str2.split("");
+
+  const sorted1 = arr1.sort();
+  const sorted2 = arr2.sort();
+
+  const result1 = sorted1.join("");
+  const result2 = sorted2.join("");
+
+  return result1 === result2;
+}
+
+console.log(checkContent("mitgroup", "gmtiprou"));
+
 // TASK C:
 
 // const moment = require("moment");
@@ -9,33 +29,24 @@
 //     this.lagmon = lagmon;
 //     this.cola = cola;
 //   }
+
 //   qoldiq() {
-//     console.log(
-//       `Hozir sizda ${data}da ${this.non}ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola mavjud `
-//     );
+//     console.log(`Hozir ${data} da ${this.non} ta non, ${this.lagmon} ta lagmon va ${this.cola} ta cola mavjud`);
 //   }
 
-//   sotish(mahsulot, minus) {
-//     if (mahsulot === "non") {
-//       this.non -= minus;
-//     } else if (mahsulot === "lagmon") {
-//       this.lagmon -= minus;
-//     } else if (mahsulot === "cola") {
-//       this.cola -= minus;
+//   sotish(product, amount) {
+//     if (this[product] !== undefined) {
+//       this[product] -= amount;
+//       console.log(`${amount} ta ${product} sotildi`);
 //     } else {
-//       console.log("sizda mahsulot yuq");
+//       console.log("Bunday mahsulot yo'q");
 //     }
 //   }
 
-//   qabul(mahsulot, plus) {
-//     if (mahsulot === "non") {
-//       this.non += plus;
-//     } else if (mahsulot === "lagmon") {
-//       this.lagmon += plus;
-//     } else if (mahsulot === "cola") {
-//       this.cola += plus;
-//     } else {
-//       console.log("mahsulot qushmadingiz");
+//   qabul(product, amount) {
+//     if (this[product] !== undefined) {
+//       this[product] += amount;
+//       console.log(`${amount} ta ${product} qabul qilindi`);
 //     }
 //   }
 // }
@@ -43,9 +54,8 @@
 // const shop = new Shop(4, 5, 2);
 
 // shop.qoldiq();
-// shop.sotish("non", 2);
-// shop.qabul("cola", 5);
-// shop.qoldiq();
+// shop.sotish("lagmon", 1);
+// shop.qabul("cola", 10);
 
 // TASK B:
 // function countDigits(digits) {
