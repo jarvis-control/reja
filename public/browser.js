@@ -84,11 +84,14 @@ document.addEventListener("click", function (e) {
             ".item-text"
           ).innerHTML = userInput;
         })
-        .catch((err) => {});
+        .catch((err) => {
+            console.log("Iltimos qaytadan harakat qiling!");
+        });
     }
   }
 });
 
+// delete-all oper
 document.getElementById("clean-all").addEventListener("click", function () {
   axios.post("/delete-all", { delete_all: true }).then((response) => {
     alert(response.data.state);

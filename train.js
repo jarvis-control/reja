@@ -1,22 +1,50 @@
-// TAK D:
+// TASK F:
 
-function checkContent(str1, str2) {
-  if (str1.length !== str2.length) {
-    return false;
+function findDoublers(str) {
+  let seen = [];
+  for (let i = 0; i < str.length; i++) {
+    if (seen.includes(str[i])) {
+      return true;
+    } else {
+      seen.push(str[i]);
+    }
   }
-  const arr1 = str1.split("");
-  const arr2 = str2.split("");
 
-  const sorted1 = arr1.sort();
-  const sorted2 = arr2.sort();
-
-  const result1 = sorted1.join("");
-  const result2 = sorted2.join("");
-
-  return result1 === result2;
+  return false;
 }
 
-console.log(checkContent("mitgroup", "gmtiprou"));
+console.log(findDoublers("Hello"));
+
+
+
+// TASK E:
+
+// function getReverse(str) {
+//   return str.split("").reverse().join("")
+// }
+
+// console.log(getReverse("Hello"));
+
+
+// TAK D:
+
+// function checkContent(str1, str2) {
+//   if (str1.length !== str2.length) {
+//     return false;
+//   }
+//   const arr1 = str1.split("");
+//   const arr2 = str2.split("");
+
+//   const sorted1 = arr1.sort();
+//   const sorted2 = arr2.sort();
+
+//   const result1 = sorted1.join("");
+//   const result2 = sorted2.join("");
+
+//   return result1 === result2;
+// }
+
+// console.log(checkContent("mitgroup", "gmtiprou"));
 
 // TASK C:
 
